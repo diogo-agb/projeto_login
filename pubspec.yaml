@@ -49,6 +49,8 @@ flutter:
   assets:
     - assets/social.png
     - assets/network.jpg
+    - assets/networks.jpg
+    - assets/social_transparent.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

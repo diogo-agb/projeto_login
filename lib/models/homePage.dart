@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './login.dart';
 import './signup.dart';
+import '../animation/my_fade_in.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -35,87 +36,104 @@ class HomePage extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Text(
-                    'Welcome',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                  MyFadeIn(
+                    milliseconds: 600,
+                    child: Text(
+                      'Bem-vindo',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
-                    'Automatic identity verification which enables you to verify your identity',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.grey[700],
-                      fontSize: 15,
+                  MyFadeIn(
+                    milliseconds: 600,
+                    child: Text(
+                      'Conecte-se para acessar nossa área exclusiva',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.grey[700],
+                        fontSize: 15,
+                      ),
                     ),
                   ),
                 ],
               ),
-              Container(
-                height: mediaQuery.size.height / 3,
-                decoration: BoxDecoration(
+              MyFadeIn(
+                milliseconds: 1000,
+                child: Container(
+                  height: mediaQuery.size.height / 3,
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                  image: AssetImage('assets/social.png'),
-                )),
+                      image: AssetImage('assets/social_transparent.png'),
+                    ),
+                  ),
+                ),
               ),
               Column(
                 children: [
-                  MaterialButton(
-                    minWidth: double.infinity,
-                    height: 60,
-                    onPressed: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginPage())),
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                        color: Colors.black,
+                  MyFadeIn(
+                    milliseconds: 1400,
+                    child: MaterialButton(
+                      minWidth: double.infinity,
+                      height: 60,
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage())),
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Colors.black,
+                        ),
+                        borderRadius: BorderRadius.circular(50),
                       ),
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                      child: Text(
+                        'Conectar',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    padding: EdgeInsets.only(top: 3, right: 3),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      border: Border(
-                        top: BorderSide(color: Colors.black),
-                        bottom: BorderSide(color: Colors.black),
-                        left: BorderSide(color: Colors.black),
-                        right: BorderSide(color: Colors.black),
-                      ),
-                    ),
-                    child: MaterialButton(
-                      minWidth: double.infinity,
-                      height: 60,
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignupPage()),
-                        );
-                      },
-                      color: Colors.cyanAccent[100],
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
+                  MyFadeIn(
+                    milliseconds: 1400,
+                    child: Container(
+                      padding: EdgeInsets.only(top: 3, right: 3),
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
+                        border: Border(
+                          top: BorderSide(color: Colors.black),
+                          bottom: BorderSide(color: Colors.black),
+                          left: BorderSide(color: Colors.black),
+                          right: BorderSide(color: Colors.black),
+                        ),
                       ),
-                      child: Text(
-                        'Sign up',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
+                      child: MaterialButton(
+                        minWidth: double.infinity,
+                        height: 60,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignupPage()),
+                          );
+                        },
+                        color: Colors.cyanAccent[100],
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: Text(
+                          'Inscrever-se',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
                     ),
