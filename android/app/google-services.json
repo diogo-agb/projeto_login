@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "503365836449",
+    "firebase_url": "https://projeto-login-78e5c.firebaseio.com",
+    "project_id": "projeto-login-78e5c",
+    "storage_bucket": "projeto-login-78e5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503365836449:android:ac41b5dca1156368689ae0",
+        "android_client_info": {
+          "package_name": "br.com.example.loginapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503365836449-8e9r2031lu2msnan7ld1mrqbcbjq642g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-uKDZj0f0RaQ9st9Nohrta9SOGzlTTuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503365836449-8e9r2031lu2msnan7ld1mrqbcbjq642g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

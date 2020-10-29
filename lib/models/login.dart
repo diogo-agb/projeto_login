@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import '../animation/my_fade_in.dart';
 import './signup.dart';
+import './homePage.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   Widget makeInput({label, obscureText = false}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +35,7 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 30,
+          height: 18,
         )
       ],
     );
@@ -46,6 +52,13 @@ class LoginPage extends StatelessWidget {
       );
     }
 
+    _goHome() {
+      return Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    }
+
     return Scaffold(
       // resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -54,9 +67,7 @@ class LoginPage extends StatelessWidget {
         brightness: Brightness.light,
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: _goHome,
           icon: Icon(
             Icons.arrow_back_ios,
             size: 20,
@@ -161,12 +172,13 @@ class LoginPage extends StatelessWidget {
                         ),
                         MyFadeIn(
                           milliseconds: 1400,
-                          child: FlatButton(
-                            onPressed: _signUp,
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(50),
+                            onTap: _signUp,
                             child: Text(
-                              "Inscreva-se",
+                              " Inscreva-se",
                               style: TextStyle(
-                                color: Colors.grey[800],
+                                fontWeight: FontWeight.w600,
                                 fontSize: 18,
                               ),
                             ),
@@ -180,7 +192,7 @@ class LoginPage extends StatelessWidget {
               MyFadeIn(
                 milliseconds: 1800,
                 child: Container(
-                  height: mediaQuery.size.height / 3,
+                  height: mediaQuery.size.height * 0.35,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/networks.jpg'),

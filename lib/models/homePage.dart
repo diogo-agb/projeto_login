@@ -30,117 +30,123 @@ class HomePage extends StatelessWidget {
             horizontal: 30,
             vertical: 50,
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Column(
+          child: SingleChildScrollView(
+            child: Container(
+              height: mediaQuery.size.height * 0.80,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  MyFadeIn(
-                    milliseconds: 600,
-                    child: Text(
-                      'Bem-vindo',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  MyFadeIn(
-                    milliseconds: 600,
-                    child: Text(
-                      'Conecte-se para acessar nossa área exclusiva',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.grey[700],
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              MyFadeIn(
-                milliseconds: 1000,
-                child: Container(
-                  height: mediaQuery.size.height / 3,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/social_transparent.png'),
-                    ),
-                  ),
-                ),
-              ),
-              Column(
-                children: [
-                  MyFadeIn(
-                    milliseconds: 1400,
-                    child: MaterialButton(
-                      minWidth: double.infinity,
-                      height: 60,
-                      onPressed: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LoginPage())),
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.black,
-                        ),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: Text(
-                        'Conectar',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  MyFadeIn(
-                    milliseconds: 1400,
-                    child: Container(
-                      padding: EdgeInsets.only(top: 3, right: 3),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border(
-                          top: BorderSide(color: Colors.black),
-                          bottom: BorderSide(color: Colors.black),
-                          left: BorderSide(color: Colors.black),
-                          right: BorderSide(color: Colors.black),
-                        ),
-                      ),
-                      child: MaterialButton(
-                        minWidth: double.infinity,
-                        height: 60,
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignupPage()),
-                          );
-                        },
-                        color: Colors.cyanAccent[100],
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
+                  Column(
+                    children: [
+                      MyFadeIn(
+                        milliseconds: 600,
                         child: Text(
-                          'Inscrever-se',
+                          'Bem-vindo',
                           style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      MyFadeIn(
+                        milliseconds: 600,
+                        child: Text(
+                          'Conecte-se para acessar nossa área exclusiva',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.grey[700],
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  MyFadeIn(
+                    milliseconds: 1000,
+                    child: Container(
+                      height: mediaQuery.size.height / 3,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/social_transparent.png'),
+                        ),
+                      ),
                     ),
                   ),
+                  Column(
+                    children: [
+                      MyFadeIn(
+                        milliseconds: 1400,
+                        child: MaterialButton(
+                          minWidth: double.infinity,
+                          height: 60,
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage())),
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              color: Colors.black,
+                            ),
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Text(
+                            'Conectar',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      MyFadeIn(
+                        milliseconds: 1400,
+                        child: Container(
+                          padding: EdgeInsets.only(top: 3, right: 3),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            border: Border(
+                              top: BorderSide(color: Colors.black),
+                              bottom: BorderSide(color: Colors.black),
+                              left: BorderSide(color: Colors.black),
+                              right: BorderSide(color: Colors.black),
+                            ),
+                          ),
+                          child: MaterialButton(
+                            minWidth: double.infinity,
+                            height: 60,
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignupPage()),
+                              );
+                            },
+                            color: Colors.cyanAccent[100],
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Text(
+                              'Inscreva-se',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
-              )
-            ],
+              ),
+            ),
           ),
         ),
       ),
