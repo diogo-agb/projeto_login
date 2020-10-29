@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
           height: mediaQuery.size.height,
           padding: EdgeInsets.symmetric(
             horizontal: 30,
-            vertical: 50,
+            vertical: mediaQuery.size.height * 0.02,
           ),
           child: SingleChildScrollView(
             child: Container(
